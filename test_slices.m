@@ -13,16 +13,23 @@ recon_head = recon_head(:,:,[9 1 10 2 11 3 12 4 13 5 14 6 15 7 16 8]);
 %end
 %return;
 
+s1 = 14;
+s2 = 100;
+s3 = 100;
 [o1,o2,o3] = ortho_slices(recon_head,14,100,100);
 subplot(3,1,1)
 p1 = imagesc(o1);
+title(sprintf('xy-lag %d', s1));
 
 subplot(3,1,2)
 p2 = imagesc(o2);
+title(sprintf('xz-lag %d', s2));
 
 subplot(3,1,3)
 p3 = imagesc(o3);
+title(sprintf('yz-lag %d', s3));
 
+return;
  i = 1;
  j = 1;
  while 1

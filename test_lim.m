@@ -1,7 +1,7 @@
 size = 256;
 no_tex = generate_simdata(size);
 no_lim = fftshift(fft2(no_tex));
-lim = signal_limited(no_lim, 0.15);
+lim = signal_limited(no_lim, 0.1);
 
 subplot(2,2,1)
 imshow((no_lim))
