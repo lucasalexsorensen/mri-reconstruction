@@ -1,3 +1,8 @@
+% Parameters:
+%  K - image length/width in the range 1-256 (Number)
+%  texFiles - relative path to directory containing texture images (String)
+% Output:
+%  sim_image - K x K output image with three randomly rendered figures (Matrix[2d])
 function sim_image = generate_simdata(K, texFiles)
 if K < 1 || K > 256
    error('Error: Given image size exceeds bounds (1-256) in generate_simdata');
