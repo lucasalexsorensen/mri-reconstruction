@@ -1,6 +1,6 @@
 % Parameters:
 %  im - Input image to which noise will be applied (Matrix[2d])
-%  tau - Level of noise, provided in the ranges [0-1] and [1-100] (Number)
+%  tau - Level of noise, provided in the ranges ]0-1] or [1-100] (Number)
 % Output:
 %  im_noise - Output image with added noise
 function im_noise = addnoise(im, tau)
@@ -17,7 +17,7 @@ else
    error('Error: Invalid tau given to addnoise function.') 
 end
 
-% støjmønster
+% stÃ¸jmÃ¸nster
 r = randn(h,w);
 r = r / norm(r, 'fro');
 e = tau * r * norm(im, 'fro');
