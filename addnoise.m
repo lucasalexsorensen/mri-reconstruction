@@ -20,7 +20,9 @@ end
 % støjmønster
 r = randn(h,w);
 r = r / norm(r, 'fro');
+
+% her ganges tau på for at styre niveauet af støj
 e = tau * r * norm(im, 'fro');
 
-% return
+% læg støjmønsteret til det oprindelige billede
 im_noise = im + e;
