@@ -20,12 +20,12 @@ radius = c_minimum * (0.5 + 0.5 * rand);
 
 % trekant placerings logik
 t_start = [floor(K/3 + K/3*rand), floor(K/3 + K/3*rand)];
-t_minimum = min([K-t_start(1), K-t_start(2), t_start(1), t_start(2)]);
+t_minimum = min(K-t_start(1), K-t_start(2));
 t_len = round(t_minimum * (0.5 + 0.5 * rand));
 
 % rektangel
 r_start = [floor(K/5 + K/3*rand), floor(K/5 + K/3*rand)];
-r_minimum = min([K-r_start(1), K-r_start(2), r_start(1), r_start(2)]);
+r_minimum = min(K-r_start(1), K-r_start(2));
 r_len = round(r_minimum * (0.5 + 0.5 * rand));
 
 % trekant
