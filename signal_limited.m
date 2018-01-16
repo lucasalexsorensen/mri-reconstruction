@@ -1,3 +1,7 @@
+% Parameters:
+%  signal - raw fourier signal
+%  frac - fraction in the range 0-1, determines how much signal data is
+%   kept (Number)
 function lim_signal = signal_limited(signal, frac)
 [h, w, d] = size(signal);
 if h ~= w

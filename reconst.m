@@ -1,12 +1,18 @@
+clear all;
 clc;
+A = load('./cn/A.mat');
+A = A.A;
 B = load('./cn/B.mat');
 B = B.B;
 [h,w,d] = size(B);
 
-range = [1:70];
+range = (1:70);
 ra = abs(recon_volume(B, range));
 
 p1 = imagesc(squeeze(ra(:,:,1)));
+%title('A.mat');
+
+%return;
 i = 1;
  while 1
     set(p1,'CData',ra(:,:,i));
@@ -19,5 +25,5 @@ i = 1;
        i = i + 1;
     end
     
-    pause(0.01)
+    pause(0.1)
 end

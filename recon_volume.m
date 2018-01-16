@@ -1,3 +1,8 @@
+% Parameters:
+%  slices - raw fourier signal (Matrix[3d])
+%  recon_Vector - indices of which layers to reconstruct (Vector)
+% Output:
+%  out_slices - reconstructed image data (Matrix[3d])
 function out_slices = recon_volume(slices, recon_vector)
 [h,w,d] = size(slices);
 
@@ -15,7 +20,7 @@ for i=1:length(recon_vector)
       error(sprintf('Error: Index %d given in recon_volume parameter is out of bounds.', recon_vector(i)));
    end
    
-   recon_slices = cat(3, ifft2(slices(:,:,i)), recon_slices);
+   recon_slices = cat(3, ifft2(signal_limited(slices(:,:,i), 0.3)), recon_slices);
 end
 
 out_slices = recon_slices;

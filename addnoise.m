@@ -1,3 +1,8 @@
+% Parameters:
+%  im - Input image to which noise will be applied (Matrix[2d])
+%  tau - Level of noise, provided in the ranges [0-1] and [1-100] (Number)
+% Output:
+%  im_noise - Output image with added noise
 function im_noise = addnoise(im, tau)
 [h,w,d] = size(im);
 
