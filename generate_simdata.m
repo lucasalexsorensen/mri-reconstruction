@@ -24,7 +24,7 @@ c_minimum = min([K-c_center(1), K-c_center(2), c_center(1), c_center(2)]);
 radius = c_minimum * (0.5 + 0.5 * rand);
 
 % trekant placerings logik
-t_start = [floor(K/3 + K/3*rand), floor(K/3 + K/3*rand)];
+t_start = [floor(K/5 + K/3*rand), floor(K/5 + K/3*rand)];
 t_minimum = min(K-t_start(1), K-t_start(2));
 t_len = round(t_minimum * (0.5 + 0.5 * rand));
 
@@ -36,7 +36,6 @@ r_len = round(r_minimum * (0.5 + 0.5 * rand));
 % trekant
 if tex_mode; t_tex = im2double(imread(strcat(texFiles, 'tex1.png'))); end
 t = tril(0.5*ones(t_len, t_len),-1);
-%t = repmat(t,1,1,3);
 [h, w, d] = size(t);
 for i=1:h
    for j=1:w
@@ -78,7 +77,5 @@ for i = 1:rh
        sim_temp(i + r_start(1), j + r_start(2)) = sim_temp(i + r_start(1), j + r_start(2)) + rekt(i,j);
    end
 end
-
-%sim_temp(x > 1.0) = 1.0;
 
 sim_image = sim_temp;
